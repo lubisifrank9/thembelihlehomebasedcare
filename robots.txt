@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.thembelihlehomebasedcare.org.za/sitemap.xml
+Sitemap: https://thembelihlehomebasedcare.co.za/sitemap.xml

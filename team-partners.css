@@ -290,3 +290,7 @@ main>section.section,main>section.thanks,main>section.need,main>section.goal{
 
 @media (max-width:860px){.section{padding:52px 0}}
 @media (max-width:640px){.section{padding:44px 0}.section-head{margin-bottom:28px}}
+
+/* Banner breadcrumb link stays white */
+main .crumbs a:not(.btn){color:#fff}
+main .crumbs a:not(.btn):hover{color:var(--blue)}

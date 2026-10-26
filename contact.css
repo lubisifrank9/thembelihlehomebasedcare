@@ -230,6 +230,10 @@ body.no-scroll{overflow:hidden}
 .map-wrap iframe{display:block;width:100%;height:420px;border:0}
 @media (max-width:640px){.map-wrap iframe{height:320px}}
 
+.two-col>*{min-width:0}
+.detail>div{min-width:0}
+.detail p{overflow-wrap:anywhere}
+
 /* =====================================================
    REFINEMENTS: NO UNDERLINES, REFINED BUTTONS, SECTION SEPARATION
    (this block is last on purpose, so it wins over earlier rules)
@@ -296,3 +300,7 @@ main>section.section,main>section.thanks,main>section.need,main>section.goal{
 
 @media (max-width:860px){.section{padding:52px 0}}
 @media (max-width:640px){.section{padding:44px 0}.section-head{margin-bottom:28px}}
+
+/* Banner breadcrumb link stays white */
+main .crumbs a:not(.btn){color:#fff}
+main .crumbs a:not(.btn):hover{color:var(--blue)}

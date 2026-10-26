@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Make a Request | Thembelihle Homebased Care</title>
+  <meta name="description" content="Donate, become a volunteer, become a partner, or report an orphan to Thembelihle Homebased Care in Mangweni, Kwalugedlane, Mpumalanga.">
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <link rel="stylesheet" href="form.css">
+</head>
+<body>
+
+<!-- ============ NAVIGATION ============ -->
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html" aria-label="Thembelihle Homebased Care - Home">
+      <img src="images/logo.png" alt="Thembelihle Homebased Care logo">
+      <span>Thembelihle<br>Homebased Care</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="primaryNav" class="primary-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="what-we-do.html">What We Do</a></li>
+        <li><a href="team-partners.html">Our Team &amp; Partners</a></li>
+        <li><a href="how-to-help.html">How to Help</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ PAGE BANNER ============ -->
+<section class="page-hero" aria-labelledby="pageTitle">
+  <div class="container fade-in">
+    <p class="crumbs"><a href="index.html">Home</a> &rsaquo; Make a Request</p>
+    <h1 id="pageTitle">Make a Request</h1>
+    <p class="lead">Donate, become a volunteer, become a partner, or report a child in need.</p>
+  </div>
+</section>
+
+<!-- ============ REQUEST FORM (Netlify) ============ -->
+<section class="section section-soft" id="request-form" aria-labelledby="formTitle">
+  <div class="container form-wrap">
+    <div class="section-head fade-in">
+      <p class="kicker">Get involved</p>
+      <h2 id="formTitle">Fill in the form</h2>
+      <p>Choose what you would like to do, fill in your details, and we will contact you.</p>
+    </div>
+
+    <form class="request-form fade-in" id="requestForm" name="thembelihle-request" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="thembelihle-request">
+      <p class="hp" hidden><label>Leave this empty: <input name="bot-field"></label></p>
+
+      <fieldset class="form-step">
+        <legend>1. Choose a form</legend>
+        <div class="type-grid">
+        <label class="type-option"><input type="radio" name="request_type" value="Donate" data-key="donate" required><span class="type-card"><span class="type-icon" aria-hidden="true">&#127873;</span><strong>Donate</strong><small>Food, clothes or money</small></span></label>
+        <label class="type-option"><input type="radio" name="request_type" value="Become a Volunteer" data-key="volunteer" required><span class="type-card"><span class="type-icon" aria-hidden="true">&#128588;</span><strong>Become a Volunteer</strong><small>Give your time and skills</small></span></label>
+        <label class="type-option"><input type="radio" name="request_type" value="Become a Partner" data-key="partner" required><span class="type-card"><span class="type-icon" aria-hidden="true">&#129309;</span><strong>Become a Partner</strong><small>Business, retailer, company or government</small></span></label>
+        <label class="type-option"><input type="radio" name="request_type" value="Parent/Guardian/Community Member reporting an orphan" data-key="report" required><span class="type-card"><span class="type-icon" aria-hidden="true">&#128155;</span><strong>Report an orphan</strong><small>Parent, guardian or community member</small></span></label>
+        </div>
+      </fieldset>
+
+      <!-- Donate -->
+      <fieldset class="form-step" data-for="donate" hidden disabled>
+        <legend>2. What would you like to donate?</legend>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="donation_type" value="Food" required><span>Food</span></label>
+          <label class="choice"><input type="radio" name="donation_type" value="Clothes" required><span>Clothes</span></label>
+          <label class="choice"><input type="radio" name="donation_type" value="Money" required><span>Money</span></label>
+        </div>
+      </fieldset>
+
+      <!-- Volunteer -->
+      <fieldset class="form-step" data-for="volunteer" hidden disabled>
+        <legend>2. How would you like to volunteer?</legend>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="volunteer_type" value="Come help for a day" required><span>Come help for a day</span></label>
+          <label class="choice"><input type="radio" name="volunteer_type" value="Become a regular volunteer" required><span>Become a regular volunteer</span></label>
+        </div>
+      </fieldset>
+
+      <!-- Partner -->
+      <fieldset class="form-step" data-for="partner" hidden disabled>
+        <legend>2. What type of partner are you?</legend>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="partner_type" value="Business" required><span>Business</span></label>
+          <label class="choice"><input type="radio" name="partner_type" value="Retailers" required><span>Retailers</span></label>
+          <label class="choice"><input type="radio" name="partner_type" value="Companies" required><span>Companies</span></label>
+          <label class="choice"><input type="radio" name="partner_type" value="Government" required><span>Government</span></label>
+        </div>
+        <div class="field"><label for="organisation_name">Organisation name</label><input type="text" id="organisation_name" name="organisation_name" autocomplete="organization"></div>
+      </fieldset>
+
+      <!-- Contacts: donate, volunteer, partner -->
+      <fieldset class="form-step" data-for="donate volunteer partner" hidden disabled>
+        <legend>3. Your contact details</legend>
+        <div class="field-grid">
+          <div class="field"><label for="full_name">Full name</label><input type="text" id="full_name" name="full_name" autocomplete="name" required></div>
+          <div class="field"><label for="phone">Phone or WhatsApp number</label><input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" required></div>
+          <div class="field"><label for="email">Email address (optional)</label><input type="email" id="email" name="email" autocomplete="email"></div>
+          <div class="field"><label for="area">Town or area (optional)</label><input type="text" id="area" name="area"></div>
+        </div>
+        <div class="field"><label for="message">Message (optional)</label><textarea id="message" name="message" rows="3"></textarea></div>
+      </fieldset>
+
+      <!-- Report an orphan -->
+      <fieldset class="form-step" data-for="report" hidden disabled>
+        <legend>2. About the child</legend>
+        <p class="form-help">Please share only what you know. Your details will be treated with care.</p>
+        <div class="field"><label for="report_name">Your name (parent, guardian or community member)</label><input type="text" id="report_name" name="report_name" autocomplete="name" required></div>
+        <div class="field-grid">
+          <div class="field"><label for="child_name">Child's name and surname</label><input type="text" id="child_name" name="child_name" required></div>
+          <div class="field"><label for="child_dob">Date of birth</label><input type="date" id="child_dob" name="child_dob" required></div>
+          <div class="field"><label for="child_age">Age</label><input type="number" id="child_age" name="child_age" min="0" max="25" inputmode="numeric" required></div>
+        </div>
+        <div class="field"><label for="child_address">Residential address</label><textarea id="child_address" name="child_address" rows="2" required></textarea></div>
+      </fieldset>
+
+      <fieldset class="form-step" data-for="report" hidden disabled>
+        <legend>3. Your contact details</legend>
+        <div class="field-grid">
+          <div class="field"><label for="report_phone">Phone or WhatsApp number</label><input type="tel" id="report_phone" name="report_phone" autocomplete="tel" inputmode="tel" required></div>
+          <div class="field"><label for="report_email">Email address (optional)</label><input type="email" id="report_email" name="report_email" autocomplete="email"></div>
+        </div>
+      </fieldset>
+
+      <!-- Consent + send -->
+      <fieldset class="form-step form-send" data-for="donate volunteer partner report" hidden disabled>
+        <label class="consent"><input type="checkbox" name="consent" value="yes" required><span>I agree that Thembelihle Homebased Care may contact me about this request.</span></label>
+        <p class="form-error" id="formError" role="alert" hidden>Sorry, we could not send your request. Please try again, or WhatsApp or call us on 071 281 8449.</p>
+        <button class="btn btn-pink" type="submit" id="formSubmit">Send request</button>
+      </fieldset>
+
+      <noscript><p class="form-error">Please turn on JavaScript to use this form, or WhatsApp or call us on 071 281 8449.</p></noscript>
+    </form>
+
+    <p class="form-links">Want to know more first? <a href="how-to-help.html">How to Help</a> &middot; <a href="what-we-do.html">What We Do</a> &middot; <a href="contact.html">Contact Us</a></p>
+
+    <div class="form-success" id="formSuccess" role="status" tabindex="-1" hidden>
+      <span class="icon-circle ic-green big" aria-hidden="true">&#10004;</span>
+      <h3>Thank you! Your request has been sent.</h3>
+      <p id="successText">We have received your request and we will contact you soon.</p>
+      <div class="btn-row center">
+        <a class="btn btn-green" href="index.html">Back to Home</a>
+        <button class="btn btn-ghost" type="button" id="anotherBtn">Send another request</button>
+        <a class="btn btn-wa" href="https://wa.me/27712818449" target="_blank" rel="noopener">WhatsApp Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="f-about">
+      <img src="images/logo.png" alt="Thembelihle Homebased Care logo" class="f-logo">
+      <p>Thembelihle Homebased Care feeds, protects and supports orphans, vulnerable children and people living with disabilities in our community.</p>
+      <p class="f-small">NPO Reg. No: 2024/515261/08</p>
+    </div>
+    <div>
+      <h4>Quick links</h4>
+      <ul class="f-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="what-we-do.html">What We Do</a></li>
+        <li><a href="team-partners.html">Our Team &amp; Partners</a></li>
+        <li><a href="how-to-help.html">How to Help</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="form.html">Request Form</a></li>
+        <li><a href="#" data-placeholder>Facebook</a></li><!-- FACEBOOK LINK: replace # with the real Facebook page link -->
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul class="f-contact">
+        <li>Tel: <a href="tel:+27712818449">071 281 8449</a></li>
+        <li>WhatsApp: <a href="https://wa.me/27712818449" target="_blank" rel="noopener">071 281 8449</a></li>
+        <li>Email: <a href="mailto:mangwenidropincentre@gmail.com">mangwenidropincentre@gmail.com</a></li>
+        <li>Opening hours: Mon - Fri, 08h00 - 16h00</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Our addresses</h4>
+      <address>
+        <strong>Physical:</strong> Stand No 127, ABmangweni Trust, Mangweni, Kwalugedlane, 1341, Mpumalanga<br>
+        <strong>Postal:</strong> P.O. Box 608, Kwalugedlane, 1341
+      </address>
+    </div>
+  </div>
+  <div class="copyright">
+    <div class="container"><p>&copy; <span id="year">2026</span> Thembelihle Homebased Care. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<script src="form.js"></script>
+</body>
+</html>
